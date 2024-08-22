@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import connexion from "./services/connexion";
 
 import App from "./App";
 import Carnet from "./pages/carnet/Carnet";
@@ -15,6 +16,14 @@ const router = createBrowserRouter([
   {
     path: "/carnet",
     element: <Carnet />,
+    loader: async () => {
+      try {
+        const contactsData = await connexion.get("/api/contacts");
+        return contactsData.data;
+      } catch (error) {
+        throw new Error(error);
+      }
+    },
   },
   {
     path: "/contact",
