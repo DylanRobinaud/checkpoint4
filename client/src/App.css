@@ -1,165 +1,83 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+}
+
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #eee;
-  margin: 0;
-}
-
-.container {
-  height: 100vh;
-  background-image: url("./assets/images/background.webp");
+  background-image: url(./assets/images/background.jpeg);
+  background-attachment: fixed;
   background-size: cover;
-  background-position: top;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 30px;
+  color: var(--color-text-black); /* Default text color */
 }
 
-.logo {
-  font-size: 20px;
-  margin-top: 16px;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-text);
 }
 
-.navbar ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
+:root {
+  /* Colors */
+  --color-main: #2c3e50;
+  --color-second: #3498db;
+  --color-text-white: #ffffff;
+  --color-text-black: #2c3e50;
+  --color-background: #ecf0f1;
+  --color-background-lightGrey: #bdc3c7;
+  --color-error: #e74c3c;
+  --color-succes: #2ecc71;
+
+  /* Borders */
+  --border-black: 2px solid var(--color-text-black);
+  --border-white: 2px solid var(--color-text-white);
+  --border-main: 2px solid var(--color-main);
+  --border-error: 2px solid var(--color-error);
+  --border-succes: 2px solid var(--color-succes);
+  --border-radius-button: 1.5rem;
+  --border-radius-box: 0.5rem;
+  --border-radius-img: 0.5rem;
+
+  /* Fonts */
+  --font-text: "Poppins", sans-serif;
+  --font-size-h1: 2.5rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.5rem;
+  --font-size-text: 1rem;
+
+  /* Shadow */
+  --shadow-thin-right: 0.2rem 0.1rem 0.2rem 0rem var(--color-main);
+  --shadow-thin-right2: 0.2rem 0.1rem 0.2rem 0rem var(--color-second);
 }
 
-.navbar a {
-  text-decoration: none;
-  color: #eee;
-  display: flex;
-  gap: 5px;
-  justify-content: end;
-  margin-top: auto;
-  font-size: 15px;
+.btn-primary {
+  background-color: var(--color-main);
+  color: var(--color-text-white);
+  border-radius: var(--border-radius-button);
+  box-shadow: var(--shadow-thin-right);
+  padding: 0.5rem 1rem;
+  border: none;
 }
 
-.navbar a:hover {
-  scale: 110%;
+.btn-secondary {
+  background-color: var(--color-second);
+  color: var(--color-text-white);
+  border-radius: var(--border-radius-button);
+  box-shadow: var(--shadow-thin-right2);
+  padding: 0.5rem 1rem;
+  border: none;
 }
 
-.text-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+.btn-primary:hover,
+.btn-secondary:hover {
+  opacity: 0.9;
+  cursor: pointer;
 }
 
-.block-primary {
-  text-transform: uppercase;
-  margin-bottom: 30px;
-}
-
-.block-primary-main {
-  font-size: 50px;
-  font-weight: 400;
-  letter-spacing: 5px;
-  animation: blink 12s infinite;
-}
-
-.block-primary-sub {
-  display: block;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 7px;
-}
-
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 10px 20px;
-  display: inline-block;
-  border-radius: 100px;
-  transition: all 0.2s;
-  position: relative;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.btn-white {
-  background-color: #fff;
-  color: #777;
-  font-size: 14px;
-}
-
-footer {
-  position: absolute;
-  top: 85%;
-  left: 75%;
-}
-
-.wcs {
-  text-decoration: none;
-  color: #ff1493ad;
-}
-
-.wcs:hover {
-  border-bottom: solid 1px #ff1493ad;
-}
-
-@media screen and (max-width: 760px) {
-  .logo {
-    display: none;
-  }
-
-  .container {
-    justify-content: center;
-  }
-
-  footer {
-    position: absolute;
-    top: 85%;
-    left: 20%;
-  }
-}
-
-@media screen and (min-width: 761px) and (max-width: 960px) {
-  footer {
-    position: absolute;
-    top: 85%;
-    left: 60%;
-  }
-}
-
-@keyframes blink {
-  20%,
-  24%,
-  55% {
-    color: #111;
-    text-shadow: none;
-  }
-  0%,
-  19%,
-  21%,
-  23%,
-  25%,
-  54%,
-  56%,
-  100% {
-    text-shadow:
-      0 0 5px #ff1493ad,
-      0 0 15px #eee,
-      0 0 20px #ff1493ad,
-      0 0 40px #a00ac9,
-      0 0 60px #ff0000,
-      0 0 10px #970dc5,
-      0 0 98px #ff0000;
-    color: #fff;
-  }
+.card {
+  background-color: var(--color-background-lightGrey);
+  border-radius: var(--border-radius-box);
+  box-shadow: var(--shadow-thin-right);
+  padding: 1rem;
+  margin: 1rem 0;
 }
