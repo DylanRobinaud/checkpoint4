@@ -1,0 +1,21 @@
+.card {
+  background-color: var(--color-background-lightGrey);
+  border-radius: var(--border-radius-box);
+  box-shadow: var(--shadow-thin-right);
+  padding: 1rem;
+  width: 15rem;
+  text-align: center;
+  max-height: 5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.3rem;
+    padding: 0.5rem;
+    width: 10rem;
+    max-height: 4rem;
+  }
+}
