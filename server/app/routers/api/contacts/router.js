@@ -3,16 +3,21 @@ const express = require("express");
 const router = express.Router();
 
 /* ************************************************************************* */
-// Import And Use Routers Here
+// Define Your API Routes Here
 /* ************************************************************************* */
 
-const itemsRouter = require("./items/router");
+// Import contact-related actions
+const { browse, read, add } = require("../../../controllers/contactActions");
 
-router.use("/items", itemsRouter);
+// Route to get a list of contacts
+router.get("/", browse);
 
-const contactsRouter = require("./contacts/router");
+// Route to get a specific contact by ID
+router.get("/:id", read);
 
-router.use("/contacts", contactsRouter);
+// Route to add a new contact
+router.post("/", add);
+
 /* ************************************************************************* */
 
 module.exports = router;
