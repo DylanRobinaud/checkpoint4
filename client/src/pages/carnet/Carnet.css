@@ -1,0 +1,37 @@
+.carnet-main {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: 8rem auto;
+  height: 80vh;
+  .carnet-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 8rem;
+    .carnet-article {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 45%;
+      gap: 0 5rem;
+      padding: 2rem;
+      margin: 1rem 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .carnet-main {
+    margin: 14rem 4.5rem;
+    height: 62vh;
+    .carnet-section {
+      padding: 1rem;
+      .carnet-article {
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
