@@ -18,18 +18,13 @@ const browse = async (req, res, next) => {
 // The R of BREAD - Read operation
 const read = async (req, res, next) => {
   try {
-    // Fetch a specific contact from the database based on the provided ID
     const contact = await tables.contact.read(req.params.id);
-
-    // If the contact is not found, respond with HTTP 404 (Not Found)
-    // Otherwise, respond with the contact in JSON format
     if (contact == null) {
       res.sendStatus(404);
     } else {
-      res.json(contact);
+      res.status(200).json(contact);
     }
   } catch (err) {
-    // Pass any errors to the error-handling middleware
     next(err);
   }
 };

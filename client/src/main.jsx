@@ -26,8 +26,16 @@ const router = createBrowserRouter([
     },
   },
   {
-    path: "/contact",
+    path: "/contact/:id",
     element: <Contact />,
+    loader: async ({ params }) => {
+      try {
+        const contactsData = await connexion.get(`/api/contacts/${params.id}`);
+        return contactsData.data;
+      } catch (error) {
+        throw new Error(error);
+      }
+    },
   },
 ]);
 

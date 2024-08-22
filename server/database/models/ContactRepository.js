@@ -25,7 +25,7 @@ class ContactRepository extends AbstractRepository {
   async read(id) {
     // Execute the SQL SELECT query to retrieve a specific contact by its ID
     const [rows] = await this.database.query(
-      `select * from ${this.table} where id = ?`,
+      `SELECT co.id AS contact_id, co.last_name, co.first_name, co.phone, co.email, co.address, ca.name AS category_name, n.content AS note_content, DATE_FORMAT(n.creation_date, '%d/%m/%Y %H:%i:%s') AS note_creation_date FROM ${this.table} AS co  LEFT JOIN category AS ca ON co.category_id = ca.id LEFT JOIN note AS n ON co.id = n.contact_id WHERE co.id = ?`,
       [id]
     );
 
