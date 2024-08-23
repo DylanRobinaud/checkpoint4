@@ -26,7 +26,7 @@ function Carnet() {
   }, []);
 
   return (
-    <main className="carnet-main">
+    <main>
       <section className="carnet-section">
         <article className="carnet-article">
           {contactsData

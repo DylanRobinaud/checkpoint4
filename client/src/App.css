@@ -9,7 +9,6 @@ body {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  color: var(--color-text-black); /* Default text color */
 }
 
 * {
@@ -17,6 +16,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: var(--font-text);
+  color: var(--color-text-black); /* Default text color */
 }
 
 :root {
@@ -44,8 +44,8 @@ body {
   --font-text: "Poppins", sans-serif;
   --font-size-h1: 2.5rem;
   --font-size-h2: 2rem;
-  --font-size-h3: 1rem;
-  --font-size-text: 0.8rem;
+  --font-size-h3: 1.5rem;
+  --font-size-text: 1rem;
 
   /* Shadow */
   --shadow-thin-right: 0.2rem 0.1rem 0.2rem 0rem var(--color-main);
@@ -76,6 +76,15 @@ body {
   cursor: pointer;
 }
 
+main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: 8rem auto;
+  height: 80vh;
+}
+
 @media only screen and (max-width: 768px) {
   body {
     background-image: url(./assets/images/background-mobile.jpg);
@@ -87,5 +96,9 @@ body {
     --font-size-h2: 1.5rem;
     --font-size-h3: 1rem;
     --font-size-text: 0.8rem;
+  }
+  main {
+    margin: 14rem 4.5rem;
+    height: 62vh;
   }
 }
