@@ -52,30 +52,6 @@ body {
   --shadow-thin-right2: 0.2rem 0.1rem 0.2rem 0rem var(--color-second);
 }
 
-.btn-primary {
-  background-color: var(--color-main);
-  color: var(--color-text-white);
-  border-radius: var(--border-radius-button);
-  box-shadow: var(--shadow-thin-right);
-  padding: 0.5rem 1rem;
-  border: none;
-}
-
-.btn-secondary {
-  background-color: var(--color-second);
-  color: var(--color-text-white);
-  border-radius: var(--border-radius-button);
-  box-shadow: var(--shadow-thin-right2);
-  padding: 0.5rem 1rem;
-  border: none;
-}
-
-.btn-primary:hover,
-.btn-secondary:hover {
-  opacity: 0.9;
-  cursor: pointer;
-}
-
 main {
   position: relative;
   display: flex;
@@ -83,6 +59,23 @@ main {
   width: 80%;
   margin: 8rem auto;
   height: 80vh;
+}
+
+fieldset {
+  background-color: var(--color-background);
+  border-radius: 1.2rem;
+  margin: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: solid var(--color-main);
+  width: 90%;
+  legend {
+    padding: 0 0.5rem;
+  }
+  .input-fieldset {
+    width: 80%;
+  }
 }
 
 @media only screen and (max-width: 768px) {

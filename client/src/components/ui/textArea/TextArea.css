@@ -1,0 +1,12 @@
+textarea {
+  outline: none;
+  box-shadow: var(--shadow-thin-right);
+  -webkit-box-shadow: var(--shadow-thin-right);
+  -moz-box-shadow: var(--shadow-thin-right);
+  border: var(--border-black);
+  border-radius: var(--border-radius-box);
+  padding: 0.2rem;
+  width: 70%;
+  margin: 1rem auto;
+  height: 25vh;
+}

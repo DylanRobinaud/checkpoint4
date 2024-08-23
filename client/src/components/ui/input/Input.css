@@ -10,9 +10,9 @@
     border: var(--border-black);
     border-radius: var(--border-radius-box);
     height: 1.8rem;
-    width: 10rem;
+    margin: 0.3rem auto;
+    width: 70%;
     padding: 0.2rem;
-    font-family: inherit;
   }
   .input-field:hover,
   .input-field:focus {

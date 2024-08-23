@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 import DetailContact from "../../components/detailContact/DetailContact";
 
@@ -9,6 +9,7 @@ function Contact() {
   return (
     <main>
       <DetailContact selectContact={selectContactData} />
+      <Link to={`/formulaire/${selectContactData.id}`}>go</Link>
     </main>
   );
 }

@@ -34,11 +34,11 @@ function DetailContact({ selectContact }) {
             <ParagraphComponent text={selectContact.email} />
           </div>
         </article>
-        {selectContact.note_content === "" ? (
+        {selectContact.note_text === "" ? (
           <article className="contact-note">
             <H3Component title3="" />
             <div className="contact-note-response">
-              <ParagraphComponent text="" css="contact-note-content" />
+              <ParagraphComponent text="" css="contact-note-text" />
               <ParagraphComponent text="" css="contact-note-date" />
             </div>
           </article>
@@ -47,8 +47,8 @@ function DetailContact({ selectContact }) {
             <H3Component title3="Notes :" />
             <div className="contact-note-response">
               <ParagraphComponent
-                text={selectContact.note_content}
-                css="contact-note-content"
+                text={selectContact.note_text}
+                css="contact-note-text"
               />
               <ParagraphComponent
                 text={selectContact.note_creation_date}
