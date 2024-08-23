@@ -6,24 +6,19 @@ const router = express.Router();
 // Define Your API Routes Here
 /* ************************************************************************* */
 
-// Import contact-related actions
-const {
-  browse,
-  read,
-  edit,
-  add,
-} = require("../../../controllers/contactActions");
+// Import note-related actions
+const { edit } = require("../../../controllers/noteActions");
 
-// Route to get a list of contacts
-router.get("/", browse);
+// Route to get a list of notes
+// router.get("/", browse);
 
-// Route to get a specific contact by ID
-router.get("/:id", read);
+// Route to get a specific note by ID
+// router.get("/:id", read);
 
 router.put("/:id", edit);
 
-// Route to add a new contact
-router.post("/", add);
+// Route to add a new note
+// router.post("/", add);
 
 /* ************************************************************************* */
 

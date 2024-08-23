@@ -3,23 +3,21 @@ CREATE TABLE category (
   name VARCHAR(250) NOT NULL
 );
 
--- Create the contact table
 CREATE TABLE contact (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  last_name VARCHAR(250) NOT NULL,
-  first_name VARCHAR(250) NOT NULL,
-  phone VARCHAR(250),
-  email VARCHAR(250),
+  last_name VARCHAR(100) NOT NULL,
+  first_name VARCHAR(100) NOT NULL,
+  phone VARCHAR(50),
+  email VARCHAR(100),
   address TEXT,
   category_id INT,
   FOREIGN KEY (category_id) REFERENCES category(id)
 );
 
--- Create the note table
 CREATE TABLE note (
   id INT AUTO_INCREMENT PRIMARY KEY,
   contact_id INT,
-  content TEXT,
+  note_text TEXT,
   creation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (contact_id) REFERENCES contact(id)
 );
@@ -54,9 +52,8 @@ INSERT INTO contact (last_name, first_name, phone, email, address, category_id) 
 ("Girard", "Amandine", "0123456789", "amandine.girard@example.com", "190 Rue de la Convention, Paris", 2),
 ("Fournier", "Maxime", "0123456790", "maxime.fournier@example.com", "200 Rue de Vaugirard, Paris", 1);
 
-
 -- Insert notes
-INSERT INTO note (contact_id, content) VALUES
+INSERT INTO note (contact_id, note_text) VALUES
 (1, "Appel de suivi prévu pour le 10 août"),
 (2, "Envoyer une carte d'anniversaire"),
 (3, "Discuter des nouveaux projets lors de la prochaine réunion"),

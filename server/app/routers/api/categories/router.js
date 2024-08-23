@@ -6,24 +6,17 @@ const router = express.Router();
 // Define Your API Routes Here
 /* ************************************************************************* */
 
-// Import contact-related actions
-const {
-  browse,
-  read,
-  edit,
-  add,
-} = require("../../../controllers/contactActions");
+// Import category-related actions
+const { browse } = require("../../../controllers/categoryActions");
 
-// Route to get a list of contacts
+// Route to get a list of categorys
 router.get("/", browse);
 
-// Route to get a specific contact by ID
-router.get("/:id", read);
+// Route to get a specific category by ID
+// router.get("/:id", read);
 
-router.put("/:id", edit);
-
-// Route to add a new contact
-router.post("/", add);
+// Route to add a new category
+// router.post("/", add);
 
 /* ************************************************************************* */
 
