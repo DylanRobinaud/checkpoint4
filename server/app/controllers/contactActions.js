@@ -30,6 +30,21 @@ const read = async (req, res, next) => {
 };
 
 // The E of BREAD - Edit (Update) operation
+const edit = async (req, res, next) => {
+  // Extract the contact data from the request body and params
+  const contact = { ...req.body, id: req.params.id };
+
+  try {
+    // Update the contact in the database
+    await tables.contact.update(contact);
+
+    // Respond with HTTP 204 (No Content)
+    res.sendStatus(204);
+  } catch (err) {
+    // Pass any errors to the error-handling middleware
+    next(err);
+  }
+};
 // This operation is not yet implemented
 
 // The A of BREAD - Add (Create) operation
@@ -56,7 +71,7 @@ const add = async (req, res, next) => {
 module.exports = {
   browse,
   read,
-  // edit,
+  edit,
   add,
   // destroy,
 };

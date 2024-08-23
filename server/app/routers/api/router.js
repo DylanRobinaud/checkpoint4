@@ -13,7 +13,15 @@ router.use("/items", itemsRouter);
 const contactsRouter = require("./contacts/router");
 
 router.use("/contacts", contactsRouter);
-router.use("/contacts/:id", contactsRouter);
+
+const notesRouter = require("./notes/router");
+
+router.use("/notes", notesRouter);
+
+const categoriesRouter = require("./categories/router");
+
+router.use("/categories", categoriesRouter);
+
 /* ************************************************************************* */
 
 module.exports = router;
