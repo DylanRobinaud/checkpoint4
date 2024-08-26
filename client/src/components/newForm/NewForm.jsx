@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import H3Component from "../../ui/text/H3component";
-import Input from "../../ui/input/Input";
-import Select from "../../ui/select/Select";
-import ButtonSubmit from "../../ui/button/buttonSubmit/ButtonSubmit";
+import H3Component from "../ui/text/H3component";
+import Input from "../ui/input/Input";
+import Select from "../ui/select/Select";
+import ButtonSubmit from "../ui/button/buttonSubmit/ButtonSubmit";
 
-import connexion from "../../../services/connexion";
+import connexion from "../../services/connexion";
 
-import "./ModifyContact.css";
+import "./NewForm.css";
 
 const initialContact = {
   last_name: "",
@@ -19,7 +19,7 @@ const initialContact = {
   category_id: null,
 };
 
-function ModifyContact({ contactId }) {
+function Newform() {
   const [contact, setContact] = useState(initialContact);
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
@@ -45,11 +45,11 @@ function ModifyContact({ contactId }) {
     }));
   };
 
-  const handleSubmitModify = async (e) => {
+  const handleSubmitNew = async (e) => {
     e.preventDefault();
     try {
-      await connexion.put(`/api/contacts/${contactId}`, contact);
-      navigate(`/contact/${contactId}`);
+      await connexion.post("/api/contacts", contact);
+      navigate(`/carnet`);
     } catch (error) {
       console.error("There was an error updating the contact!", error);
     }
@@ -57,7 +57,7 @@ function ModifyContact({ contactId }) {
 
   return (
     <article>
-      <form onSubmit={handleSubmitModify}>
+      <form onSubmit={handleSubmitNew}>
         <fieldset>
           <legend>
             <H3Component title3="Identité :" />
@@ -132,11 +132,11 @@ function ModifyContact({ contactId }) {
           />
         </fieldset>
         <div className="form-button">
-          <ButtonSubmit text="Submit" handleClick={handleSubmitModify} />
+          <ButtonSubmit text="Submit" handleClick={handleSubmitNew} />
         </div>
       </form>
     </article>
   );
 }
 
-export default ModifyContact;
+export default Newform;

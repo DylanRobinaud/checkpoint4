@@ -4,9 +4,12 @@ import "./CarnetContact.css";
 
 function CarnetContact({ contact }) {
   return (
-    <section className="card">
-      <H3Component title3={`${contact.first_name} ${contact.last_name}`} />
-      <ParagraphComponent text={contact.phone} />
+    <section className="card-box">
+      <H3Component
+        title3={`${contact.first_name} ${contact.last_name}`}
+        css="card-box-title"
+      />
+      <ParagraphComponent text={contact.phone} css="card-box-paragraphe" />
     </section>
   );
 }

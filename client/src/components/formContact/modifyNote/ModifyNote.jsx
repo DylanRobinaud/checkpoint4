@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import H3Component from "../../ui/text/H3component";
 import TextArea from "../../ui/textArea/TextArea";
@@ -14,6 +15,7 @@ const initialNote = {
 
 function ModifyNote({ contactId }) {
   const [note, setNote] = useState(initialNote);
+  const navigate = useNavigate();
 
   const handleNoteChange = (event) => {
     const { name, value } = event.target;
@@ -28,6 +30,7 @@ function ModifyNote({ contactId }) {
     try {
       await connexion.put(`/api/notes/${contactId}`, note);
       setNote(initialNote);
+      navigate(`/contact/${contactId}`);
     } catch (error) {
       console.error("There was an error updating the note!", error);
     }

@@ -78,6 +78,25 @@ fieldset {
   }
 }
 
+.home-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 8rem;
+  .home-article {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .home-postit-img {
+    width: 90%;
+    margin: 1rem auto;
+    padding-left: 2rem;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   body {
     background-image: url(./assets/images/background-mobile.jpg);
@@ -93,5 +112,20 @@ fieldset {
   main {
     margin: 14rem 4.5rem;
     height: 62vh;
+  }
+  .home-main {
+    margin: 14rem 3rem;
+    height: 30vh;
+    .home-section {
+      display: flex;
+      justify-content: center;
+      width: 70%;
+      gap: 0rem;
+      .home-article {
+        text-align: center;
+        font-size: 0.5rem;
+        gap: 4rem;
+      }
+    }
   }
 }

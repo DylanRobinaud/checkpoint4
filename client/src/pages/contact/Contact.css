@@ -1,0 +1,72 @@
+.contact-modif-link {
+  background-color: var(--color-main);
+  color: var(--color-text-white);
+  border-radius: var(--border-radius-button);
+  box-shadow: var(--shadow-thin-right);
+  padding: 0.5rem 1rem;
+  border: none;
+  position: absolute;
+  bottom: 3rem;
+  left: 32rem;
+  text-decoration: none;
+}
+
+.contact-modif-link:hover {
+  box-shadow: var(--shadow-thin-right2);
+  -webkit-box-shadow: var(--shadow-thin-right2);
+  -moz-box-shadow: var(--shadow-thin-right2);
+}
+
+.contact-back-link {
+  background-color: var(--color-main);
+  color: var(--color-text-white);
+  border-radius: var(--border-radius-button);
+  box-shadow: var(--shadow-thin-right);
+  padding: 0.5rem 1rem;
+  border: none;
+  position: absolute;
+  top: 2rem;
+  left: 3rem;
+  text-decoration: none;
+}
+
+.contact-modif-link:hover {
+  box-shadow: var(--shadow-thin-right2);
+  -webkit-box-shadow: var(--shadow-thin-right2);
+  -moz-box-shadow: var(--shadow-thin-right2);
+}
+.carnet-delete {
+  background-color: var(--color-main);
+  border-radius: var(--border-radius-button);
+  box-shadow: var(--shadow-thin-right);
+  padding: 0.5rem 1rem;
+  border: none;
+  position: absolute;
+  top: 2rem;
+  left: 40rem;
+  text-decoration: none;
+}
+
+.carnet-delete:hover {
+  box-shadow: var(--shadow-thin-right2);
+  -webkit-box-shadow: var(--shadow-thin-right2);
+  -moz-box-shadow: var(--shadow-thin-right2);
+}
+
+.contact-addContact-link {
+  background-color: var(--color-main);
+  color: var(--color-text-white);
+  border-radius: var(--border-radius-button);
+  box-shadow: var(--shadow-thin-right);
+  padding: 0.5rem 1rem;
+  border: none;
+  position: absolute;
+  bottom: 3rem;
+  left: 30rem;
+  text-decoration: none;
+}
+.contact-addContact-link:hover {
+  box-shadow: var(--shadow-thin-right2);
+  -webkit-box-shadow: var(--shadow-thin-right2);
+  -moz-box-shadow: var(--shadow-thin-right2);
+}

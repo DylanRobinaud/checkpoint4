@@ -1,6 +1,7 @@
 .carnet-section {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
   gap: 8rem;
   .carnet-article {
@@ -11,16 +12,60 @@
     width: 55%;
     height: 70%;
     gap: 0 2rem;
+    .carnet-link {
+      background-color: var(--color-background-lightGrey);
+      border-radius: var(--border-radius-box);
+      box-shadow: var(--shadow-thin-right);
+      padding: 0.5rem;
+      width: 40%;
+      text-align: center;
+      max-height: 5rem;
+      text-decoration: none;
+    }
   }
+}
+.carnet-div-left-page {
+  position: absolute;
+  top: 4rem;
+  left: 14rem;
+}
+
+.carnet-div-right-page {
+  position: absolute;
+  top: 4rem;
+  right: 14rem;
 }
 
 @media only screen and (max-width: 768px) {
-  .carnet-section {
-    padding: 1rem;
-    .carnet-article {
-      display: flex;
-      width: 100%;
-      margin: 0 auto;
+  .carnet-main {
+    margin: 10rem 3rem;
+    height: 8vh;
+    .carnet-section {
+      gap: 2rem;
+      padding: 1rem;
+      .carnet-article {
+        gap: 1rem;
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+        .carnet-link {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 0.3rem;
+          padding: 0.5rem;
+          width: 6rem;
+          max-height: 4rem;
+        }
+      }
+    }
+    .carnet-div-left-page {
+      position: absolute;
+      top: -2rem;
+      left: auto;
+    }
+    .contact-back-link {
+      position: absolute;
     }
   }
 }

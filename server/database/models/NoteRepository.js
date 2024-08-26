@@ -9,11 +9,11 @@ class NoteRepository extends AbstractRepository {
 
   // The C of CRUD - Create operation
 
-  async create(note) {
+  async create(contactId) {
     // Execute the SQL INSERT query to add a new note to the "note" table
     const [result] = await this.database.query(
-      `insert into ${this.table} (title, user_id) values (?, ?)`,
-      [note.title, note.user_id]
+      `insert into ${this.table} (contact_id, note_text) values (?, "")`,
+      [contactId]
     );
 
     // Return the ID of the newly inserted note

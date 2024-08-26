@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import H1Component from "../ui/text/H1component";
 import H3Component from "../ui/text/H3component";
 import ParagraphComponent from "../ui/text/ParagraphComponent";
@@ -5,6 +7,17 @@ import ParagraphComponent from "../ui/text/ParagraphComponent";
 import "./DetailContact.css";
 
 function DetailContact({ selectContact }) {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const mobile = window.innerWidth <= 768;
+      setIsMobile(mobile);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <>
       <section className="contact-section">
@@ -58,7 +71,15 @@ function DetailContact({ selectContact }) {
           </article>
         )}
       </section>
-      <section className="contact-section">map</section>
+      {!isMobile && (
+        <section className="contact-section">
+          <img
+            className="contact-profile-img"
+            src={selectContact.profile_img}
+            alt="img de profil"
+          />
+        </section>
+      )}
     </>
   );
 }

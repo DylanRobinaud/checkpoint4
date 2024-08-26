@@ -12,3 +12,7 @@
   -webkit-box-shadow: var(--shadow-thin-right2);
   -moz-box-shadow: var(--shadow-thin-right2);
 }
+
+.link-button {
+  text-decoration: none;
+}
