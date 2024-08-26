@@ -12,6 +12,7 @@ const {
   read,
   edit,
   add,
+  destroy,
 } = require("../../../controllers/contactActions");
 
 // Route to get a list of contacts
@@ -24,6 +25,8 @@ router.put("/:id", edit);
 
 // Route to add a new contact
 router.post("/", add);
+
+router.delete("/:id", destroy);
 
 /* ************************************************************************* */
 

@@ -5,3 +5,21 @@
   gap: 2rem;
   margin: 0 4rem;
 }
+.form-back-link {
+  background-color: var(--color-main);
+  color: var(--color-text-white);
+  border-radius: var(--border-radius-button);
+  box-shadow: var(--shadow-thin-right);
+  padding: 0.5rem 1rem;
+  border: none;
+  position: absolute;
+  bottom: 3rem;
+  left: 3rem;
+  text-decoration: none;
+}
+
+.form-back-link:hover {
+  box-shadow: var(--shadow-thin-right2);
+  -webkit-box-shadow: var(--shadow-thin-right2);
+  -moz-box-shadow: var(--shadow-thin-right2);
+}

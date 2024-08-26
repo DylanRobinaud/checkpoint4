@@ -55,6 +55,7 @@ const add = async (req, res, next) => {
   try {
     // Insert the contact into the database
     const insertId = await tables.contact.create(contact);
+    await tables.note.create(insertId);
 
     // Respond with HTTP 201 (Created) and the ID of the newly inserted contact
     res.status(201).json({ insertId });
@@ -65,13 +66,27 @@ const add = async (req, res, next) => {
 };
 
 // The D of BREAD - Destroy (Delete) operation
-// This operation is not yet implemented
+const destroy = async (req, res, next) => {
+  try {
+    // Call the delete method with the contact ID
+    const result = await tables.contact.delete(req.params.id);
 
+    // Check if any rows were affected (i.e., if the contact was deleted)
+    if (result.affectedRows === 0) {
+      res.sendStatus(404); // Not Found
+    } else {
+      res.sendStatus(204); // No Content (successful deletion)
+    }
+  } catch (err) {
+    // Pass any errors to the error-handling middleware
+    next(err);
+  }
+};
 // Ready to export the controller functions
 module.exports = {
   browse,
   read,
   edit,
   add,
-  // destroy,
+  destroy,
 };

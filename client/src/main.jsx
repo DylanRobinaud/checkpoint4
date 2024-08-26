@@ -8,6 +8,7 @@ import App from "./App";
 import Carnet from "./pages/carnet/Carnet";
 import Contact from "./pages/contact/Contact";
 import Form from "./pages/form/Form";
+import NewContact from "./pages/newContact/NewContact";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
         throw new Error(error);
       }
     },
+  },
+  {
+    path: "/ajouter_contact",
+    element: <NewContact />,
   },
 ]);
 
